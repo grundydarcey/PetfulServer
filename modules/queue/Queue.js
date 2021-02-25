@@ -14,14 +14,30 @@ class Queue {
 
   enqueue(data) {
     // Add some data to the queue.
-    const node = new _Node(data);
+    /*const node = new _Node(data);
     if (this.first === null) {
       this.first = node;
     }
     if (this.last) {
       this.last.next = node;
     }
-    this.last = node;
+    this.last = node;*/
+
+    const root = this.first;
+    const newNode = new _Node(data);
+    if (!root) {
+      this.first = newNode;
+      return null;
+    }
+    let current = root;
+    let next = current.next;
+    while (next !== null) {
+      current = next;
+      next = next.next;
+    }
+    current.next = newNode;
+    return newNode;
+
   }
 
   dequeue() {
