@@ -26,7 +26,12 @@ class Queue {
 
   dequeue() {
     // Remove some data from the queue.
-  
+    if (!this.first) {
+      return null;
+    }
+    const item = this.first;
+    this.first = this.first.next;
+    return item;
   }
 
   show() {

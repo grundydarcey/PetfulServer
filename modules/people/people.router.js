@@ -1,8 +1,6 @@
 const express = require('express');
 const json = require('body-parser').json();
-
 const People = require('./people.service');
-
 const router = express.Router();
 
 router.get('/', (req, res) => {
@@ -17,7 +15,6 @@ router.post('/', json, (req, res) => {
   const person = name;
   People.enqueue(person);
   res.status(201).json(person);
-
 });
 
 module.exports = router;
