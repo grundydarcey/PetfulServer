@@ -26,6 +26,7 @@ class Queue {
 
   dequeue() {
     // Remove some data from the queue.
+  
   }
 
   show() {
@@ -35,6 +36,8 @@ class Queue {
   all() {
     // Return all items in the queue.
   }
+
+  
 }
 
 module.exports = Queue;
