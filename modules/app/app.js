@@ -10,5 +10,6 @@ app.use(cors({
 
 app.use('/people', require('../people/people.router'));
 app.use('/pets', require('../pets/pets.router'));
+app.use('/cats', require('../cats/cats-router'));
 
 module.exports = app;
