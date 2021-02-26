@@ -1,20 +1,36 @@
 const express = require('express');
+//const xss = require('xss');
 const json = require('body-parser').json();
 const People = require('./people.service');
-const router = express.Router();
+const peopleRouter = express.Router();
 
-router.get('/', (req, res) => {
-  // Return all the people currently in the queue.
-  const allPeople = People.get();
-  return res.status(200).json(allPeople);
-});
+/*const serializeAdopter = adopter => ({
+  name: xss(adopter.name),
+});*/
 
-router.post('/', json, (req, res) => {
-  // Add a new person to the queue.
-  const { name } = req.body;
-  const person = name;
-  People.enqueue(person);
-  res.status(201).json(person);
-});
+peopleRouter
+  .route('/')
+  .get((req, res) => {
+    // Return all the people currently in the queue.
+    const allPeople = People.get();
+    res.status(200).json(allPeople);
+  })
+  .post(json, (req, res) => {
+    // Add a new person to the queue.
+    const { name } = req.body;
+    //const data = { name };
 
-module.exports = router;
+    if (!name) {
+      return res.status(400).json({error: 'Name is required to adopt'});
+    }
+    People.enqueue(name);
+    const people = People.get();
+    return res.status(201).json(people);
+  })
+  .delete((req, res) => {
+    People.dequeue();
+    const people = People.get();
+    return res.status(201).json(people);
+  });
+
+module.exports = peopleRouter;

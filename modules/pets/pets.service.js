@@ -19,7 +19,7 @@ module.exports = {
     // Return the pets next in line to be adopted.
   },
 
-  dequeue(type) {
+  dequeue() {
     // Remove a pet from the queue.
   }
 };

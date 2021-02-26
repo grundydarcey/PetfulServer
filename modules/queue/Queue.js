@@ -14,15 +14,15 @@ class Queue {
 
   enqueue(data) {
     // Add some data to the queue.
-    /*const node = new _Node(data);
+    const node = new _Node(data);
     if (this.first === null) {
       this.first = node;
     }
     if (this.last) {
       this.last.next = node;
     }
-    this.last = node;*/
-
+    this.last = node;
+    /*
     const root = this.first;
     const newNode = new _Node(data);
     if (!root) {
@@ -36,18 +36,21 @@ class Queue {
       next = next.next;
     }
     current.next = newNode;
-    return newNode;
+    return newNode;*/
 
   }
 
   dequeue() {
     // Remove some data from the queue.
-    if (!this.first) {
-      return null;
+    if (this.first === null) {
+      return;
     }
-    const item = this.first;
+    const node = this.first;
     this.first = this.first.next;
-    return item;
+    if (node === this.last) {
+      this.last = null;
+    }
+    return node.value;
   }
 
   show() {
