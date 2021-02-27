@@ -27,7 +27,7 @@ peopleRouter
   .delete((req, res) => {
     People.dequeue();
     const people = People.get();
-    return res.status(201).json(people);
+    return res.status(200).json(people);
   });
 
 module.exports = peopleRouter;

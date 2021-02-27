@@ -21,8 +21,15 @@ const petsService = {
     // Return the pets next in line to be adopted.
   },
 
-  dequeue() {
+  dequeue(type) {
     // Remove a pet from the queue.
+    if (type === 'cat') {
+      pets.cats.dequeue();
+    } else if (type === 'dog') {
+      pets.dogs.dequeue();
+    } else {
+      return;
+    }
   }
 };
 
