@@ -1,13 +1,12 @@
 const express = require('express');
-//const json = require('body-parser').json();
 const Cats = require('./cats.service');
 const catRouter = express.Router();
 
 catRouter
   .route('/')
   .get((req, res) => {
-    const allCats = Cats.get();
-    res.status(200).json(allCats);
+    const topCat = Cats.show();
+    res.status(200).json(topCat);
   })
   .delete((req, res) => {
     Cats.dequeue();

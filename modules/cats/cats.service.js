@@ -11,6 +11,10 @@ const catService = {
 
   dequeue() {
     cats.dequeue();
+  },
+
+  show() {
+    return cats.show();
   }
 };
 
