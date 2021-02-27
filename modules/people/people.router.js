@@ -1,12 +1,8 @@
+/* eslint-disable eqeqeq */
 const express = require('express');
-//const xss = require('xss');
 const json = require('body-parser').json();
 const People = require('./people.service');
 const peopleRouter = express.Router();
-
-/*const serializeAdopter = adopter => ({
-  name: xss(adopter.name),
-});*/
 
 peopleRouter
   .route('/')
@@ -18,12 +14,13 @@ peopleRouter
   .post(json, (req, res) => {
     // Add a new person to the queue.
     const { name } = req.body;
-    //const data = { name };
-
-    if (!name) {
-      return res.status(400).json({error: 'Name is required to adopt'});
-    }
-    People.enqueue(name);
+    const data = { name };
+    if (!data) 
+      return res.status(400).json({
+        error: 'Name is required to adopt'
+      });
+      
+    People.enqueue(data);
     const people = People.get();
     return res.status(201).json(people);
   })

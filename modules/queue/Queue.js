@@ -10,18 +10,20 @@ class Queue {
     // Set initial data.
     this.first = null;
     this.last = null;
+    this.size = 0;
   }
 
   enqueue(data) {
     // Add some data to the queue.
     const node = new _Node(data);
-    if (this.first === null) {
+    if (!this.first) {
       this.first = node;
-    }
-    if (this.last) {
+      this.last = node;
+    } else {
       this.last.next = node;
+      this.last = node;
     }
-    this.last = node;
+    return ++this.size;
     /*
     const root = this.first;
     const newNode = new _Node(data);
