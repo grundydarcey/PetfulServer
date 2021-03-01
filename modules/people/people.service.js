@@ -8,8 +8,8 @@ const peopleService = {
     return people;
   },
 
-  enqueue(name) {
-    people.enqueue(name);
+  enqueue(data) {
+    people.enqueue(data);
   },
 
   dequeue() {
