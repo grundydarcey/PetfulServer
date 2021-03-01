@@ -1,6 +1,6 @@
 /* eslint-disable eqeqeq */
 const express = require('express');
-const json = require('body-parser').json();
+//const json = require('body-parser').json();
 const People = require('./people.service');
 const peopleRouter = express.Router();
 
@@ -10,7 +10,7 @@ peopleRouter
     const allPeople = People.get();
     res.status(200).json(allPeople);
   })
-  .post(json, (req, res) => {
+  .post((req, res) => {
     const { name } = req.body;
     const data = { name };
     if (!data) 
