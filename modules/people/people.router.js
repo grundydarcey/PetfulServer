@@ -10,7 +10,7 @@ peopleRouter
     const allPeople = People.get();
     res.status(200).json(allPeople);
   })
-  .post(json, (req, res) => {
+  .post((req, res) => {
     const { name } = req.body;
     const data = { name };
     if (!data) 
