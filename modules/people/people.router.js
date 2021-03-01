@@ -13,16 +13,14 @@ peopleRouter
   .post(json, (req, res) => {
     const { name } = req.body;
     const data = { name };
-    /*if (!data) 
+    if (!data) 
       return res.status(400).json({
         error: 'Name is required to adopt'
       });
       
     People.enqueue(data);
     const people = People.get();
-    return res.status(201).json(people);*/
-    const newPerson = People.enqueue(data);
-    res.status(201).json(newPerson);
+    return res.status(201).json(people);
   })
   .delete((req, res) => {
     People.dequeue();
