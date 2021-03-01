@@ -19,7 +19,7 @@ class Queue {
       this.last = node;
     } else {
       this.last.next = node;
-      //this.last = node;
+      this.last = node;
     }
     return ++this.size;
   }
