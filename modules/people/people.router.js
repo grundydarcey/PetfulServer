@@ -1,6 +1,6 @@
 /* eslint-disable eqeqeq */
 const express = require('express');
-const json = require('body-parser').json();
+//const json = require('body-parser').json();
 const People = require('./people.service');
 const peopleRouter = express.Router();
 
