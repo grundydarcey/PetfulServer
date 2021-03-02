@@ -11,13 +11,12 @@ peopleRouter
     res.status(200).json(allPeople);
   })
   .post(json, (req, res) => {
-    const { value } = req.body;
-    const data = { value };
+    const { name } = req.body;
+    const data = { name };
     if (!data) 
       return res.status(400).json({
         error: 'Name is required to adopt'
       });
-      
     People.enqueue(data);
     const people = People.get();
     return res.status(201).json(people);
