@@ -11,8 +11,8 @@ peopleRouter
     res.status(200).json(allPeople);
   })
   .post(json, (req, res) => {
-    const { name } = req.body;
-    const data = { name };
+    const { value } = req.body;
+    const data = { value };
     if (!data) 
       return res.status(400).json({
         error: 'Name is required to adopt'
