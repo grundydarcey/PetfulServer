@@ -14,6 +14,10 @@ const peopleService = {
 
   dequeue() {
     people.dequeue();
+  },
+
+  all() {
+    people.all();
   }
 };
 
