@@ -43,6 +43,19 @@ class Queue {
     const node = this.first;
     return node.value;
   }
+
+  all() {
+    let allNodes = [];
+    let currentNode = this.first;
+    if (currentNode === null) {
+      return;
+    }
+    while (currentNode !== null) {
+      allNodes.push(currentNode.value);
+      currentNode = currentNode.next;
+    }
+    return allNodes;
+  }
 }
 
 module.exports = Queue;
