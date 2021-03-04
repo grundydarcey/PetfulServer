@@ -5,8 +5,8 @@ const allCatsRouter = express.Router();
 allCatsRouter
   .route('/')
   .get((req, res) => {
-    const allTheCats = allCats.get();
-    res.status(200).json(allTheCats);
+    const allCats = allCats.get();
+    res.status(200).json(allCats);
   })
   .delete((req, res) => {
     allCats.dequeue();
