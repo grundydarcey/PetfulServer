@@ -7,7 +7,7 @@ petsRouter
   .route('/')
   .get((req, res) => {
     const allThesePets = Pets.get();
-    res.status(200).json(alThesePets);
+    res.status(200).json(allThesePets);
   })
   .delete(json, (req, res) => {
     const { type } = req.body;
