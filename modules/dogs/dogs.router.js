@@ -10,7 +10,7 @@ dogRouter
   })
   .delete((req, res) => {
     Dogs.dequeue();
-    const dogs = Dogs.get();
+    const dogs = Dogs.show();
     return res.status(200).json(dogs);
   });
 
