@@ -10,7 +10,7 @@ catRouter
   })
   .delete((req, res) => {
     Cats.dequeue();
-    const cats = Cats.get();
+    const cats = Cats.show();
     return res.status(200).json(cats);
   });
 
