@@ -207,6 +207,56 @@ DELETE /allCats
 Deletes the first cat in the queue and displays all of the rest of the cats.
 
 ---EXAMPLE REQUEST/RESPONSE---
+DELETE https://fast-wildwood-90277.herokuapp.com/api/allCats HTTP STATUS 200 OK
+{
+    "first": {
+        "value": {
+            "age": 2,
+            "breed": "white cat",
+            "description": "White cat",
+            "gender": "Female",
+            "imageURL": "https://images.pexels.com/photos/617278/pexels-photo-617278.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+            "name": "Snapjacks",
+            "story": "Thrown on the street"
+        },
+        "next": {
+            "value": {
+                "age": 2,
+                "breed": "Bengal",
+                "description": "Grey cat",
+                "gender": "Female",
+                "imageURL": "https://images.pexels.com/photos/730896/pexels-photo-730896.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "name": "Grumpy-Face",
+                "story": "Thrown on the street"
+            },
+            "next": {
+                "value": {
+                    "age": 2,
+                    "breed": "Bengal",
+                    "description": "Orange cat",
+                    "gender": "Female",
+                    "imageURL": "https://images.pexels.com/photos/57416/cat-sweet-kitty-animals-57416.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                    "name": "Garry Lazereyes",
+                    "story": "Thrown on the street"
+                },
+                "next": null
+            }
+        }
+    },
+    "last": {
+        "value": {
+                    "age": 2,
+                    "breed": "Bengal",
+                    "description": "Orange cat",
+                    "gender": "Female",
+                    "imageURL": "https://images.pexels.com/photos/57416/cat-sweet-kitty-animals-57416.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                    "name": "Garry Lazereyes",
+                    "story": "Thrown on the street"
+                },
+        "next": null
+    },
+    "size": 3
+}
 
 GET /allDogs
 
@@ -269,7 +319,66 @@ DELETE /allDogs
 Deletes the first dog in the queue and displays all of the rest of the dogs.
 
 ---EXAMPLE REQUEST/RESPONSE---
-
+DELETE https://fast-wildwood-90277.herokuapp.com/api/allDogs HTTP STATUS 200 OK
+{
+    "first": {
+        "value": {
+            "age": 3,
+            "breed": "Akita",
+            "description": "A smiling golden-brown dog",
+            "gender": "Female",
+            "imageURL": "https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+            "name": "Fran",
+            "story": "Found downtown"
+        },
+        "next": {
+            "value": {
+                "imageURL": "https://images.pexels.com/photos/160846/french-bulldog-summer-smile-joy-160846.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "description": "Black pug.",
+                "name": "Bilbo",
+                "gender": "Male",
+                "age": 3,
+                "breed": "Pug",
+                "story": "Owner Passed away"
+            },
+            "next": {
+                "value": {
+                    "age": 3,
+                    "breed": "Collie",
+                    "description": "Border collie.",
+                    "gender": "Male",
+                    "imageURL": "https://images.pexels.com/photos/733416/pexels-photo-733416.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                    "name": "Philip",
+                    "story": "Owner Passed away"
+                },
+                "next": {
+                    "value": {
+                        "age": 3,
+                        "breed": "Pug",
+                        "description": "pug.",
+                        "gender": "Male",
+                        "imageURL": "https://images.pexels.com/photos/374906/pexels-photo-374906.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                        "name": "Doogie",
+                        "story": "Owner Passed away"
+                    },
+                    "next": null
+            }
+        }
+    },
+    "last": {
+        "value": {
+                        "age": 3,
+                        "breed": "Pug",
+                        "description": "pug.",
+                        "gender": "Male",
+                        "imageURL": "https://images.pexels.com/photos/374906/pexels-photo-374906.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                        "name": "Doogie",
+                        "story": "Owner Passed away"
+                    },
+        "next": null
+    },
+    "size": 3
+}
 
 
 
