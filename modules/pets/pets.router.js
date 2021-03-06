@@ -6,8 +6,8 @@ const petsRouter = express.Router();
 petsRouter
   .route('/')
   .get((req, res) => {
-    const allPets = Pets.get();
-    res.status(200).json(allPets);
+    const alylPets = Pets.get();
+    res.status(200).json(alylPets);
   })
   .delete(json, (req, res) => {
     const { type } = req.body;
